@@ -3,4 +3,5 @@ site_url: https://vofrwater.github.io/tool-specs
 
 nav:
   - Home: README.md
+  - Tool: tool.md
   - Parameter: parameter.md
