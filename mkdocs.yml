@@ -1,0 +1,6 @@
+site_name: Container-Tool specification
+site_url: https://vofrwater.github.io/tool-specs
+
+nav:
+  - Home: README.md
+  - Parameter: parameter.md
