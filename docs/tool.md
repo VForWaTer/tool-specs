@@ -23,9 +23,9 @@ Essentially, the following folder and file structure must exist within the conta
 
 ## File specification
 
-The *specification* is defined in a single YAML file, located at `/src/tool.yml`. This file hold specifications about the container image itself. 
+The *specification* is defined in a single YAML file, located at `/src/tool.yml`. This file holds specifications about the container image itself. 
 At the current state, only one field is defined and supported: `tools`.
-The `tools` filed containes a named struct with `Tool` specifications indexed by the `Tool` name.
+The `tools` field contains a named struct with `Tool` specifications indexed by the `Tool` name.
 
 The file content of the` tool.yml` has to at least include:
 
@@ -79,7 +79,7 @@ An example can be found in the next section or on the [Parameter page](parameter
 
 ## Example
 
-The following YAML file contains a sample tool specification, similar to the dummy specifications found in the different tool template container.
+The following YAML file contains a sample tool specification, similar to the dummy specifications found in the different tool template containers.
 
 ```yaml
 tools:
