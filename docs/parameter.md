@@ -4,9 +4,9 @@ We define a `Parameter` to be a structured argument, which is passed to a
 [Tool](./tool.md) on runtime. The sum of all passed `Parameters` make up the 
 *parameterization* or *parametrization* of a tool execution.
 
-All tools define their `Parameter` in the `tool.yml`. This is the blueprint about
+All tools define their `Parameters` in the `tool.yml`. This is the blueprint about
 the parameter values that are acceptable or required along with specification about
-values ranges. The *parameterization* is file based and defaults to 
+value ranges. The *parameterization* is file based and defaults to 
 `/in/parameters.json`. The JSON format is mandatory. 
 
 ## Missing parameterization
@@ -21,7 +21,7 @@ are defined at all, the `/in/parameter.json` can be an empty file:
 This is the only case, in which this file is optional and can be omitted entirely.
 Libraries parsing the parameters or tools, which read the file directly need to
 reflect this behavior and return an empty container. The exact data type of an
-empty parameterization container is depending on the implementation language.
+empty parameterization container depends on the implementation language.
 In Python this would be an empty `dict`, in R an empty `list`.
 
 ## Parameterization vs. Data
@@ -40,14 +40,14 @@ if the parameterization of a tool can be applied to other data. That means, the
 **same** analysis is run on **different** data.
 
 From a practical perspective, if you build a tool around these tool specifications,
-the tool name and conent of the `/in/parameter.json` can be used to create 
+the tool name and content of the `/in/parameter.json` can be used to create 
 checksums.
 
 
 ## File specification
 
 Each `Parameter` is described in a parameter block in the `/src/tool.yml` file.
-All parameters are collected as the mandaroty `tools.<tool_name>.parameters` block:
+All parameters are collected as the mandatory `tools.<tool_name>.parameters` block:
 
 ```yaml
 tools:
@@ -65,7 +65,7 @@ The following section will define all mandatory and optional fields of a `Parame
 
 ### `type`
 
-The `type` field is the only mandatory field. Every parameter needs a data-type.
+The `type` field is the only mandatory field. Each parameter needs a data-type.
 Allowed data-types include:
 
 * string
@@ -111,7 +111,7 @@ There are a number of file types, which are loaded by default:
 
 ### `description`
 
-Multiline comment to describe the purpose of the parameter.
+The `description` is a multiline comment to describe the purpose of the parameter.
 For the `description` Markdown is allowed, although tool-frameworks are not required to parse it.
 Descriptions are optional and can be omitted.
 
@@ -125,14 +125,12 @@ description: |
 
 ### `array`
 
-The `array` field takes a single boolean value and defaults to `array=false`. If set to `array=true` the `Parameter` is an array of `type`. The array field **cannot** be combined with the `type=file` and `type=enum` fields.
+The `array` field takes a single boolean value and defaults to `array=false`. If set to `array=true` the `Parameter` is an array of the specified `type`. The array field **cannot** be combined with the `type=file` and `type=enum` fields.
 
 ### `min`
 
 Minimum value for constraining the value range. The `min` field is only valid for `type=integer` and `type=float`. Setting a minimum value is optional and can be omitted.
 
-
 ### `max`
 
 Maximum value for constraining the value range. The `max` field is only valid for `type=integer` and `type=float`. Setting a maximum value is optional and can be omitted.
-
