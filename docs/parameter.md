@@ -138,7 +138,7 @@ Maximum value for constraining the value range. The `max` field is only valid fo
 
 ### `optional`
 
-Boolean field which defaults to `false`. If set to `optional=true`, the parameter is not required by the tool. This implies, that the tool implementation is can handle a `parameter.json`in which the `Parameter` is entirely missing.
+Boolean field which defaults to `false`. If set to `optional=true`, the parameter is not required by the tool. This implies, that the tool implementation can handle a `parameter.json` in which the `Parameter` is entirely missing.
 
 ### `default`
 
