@@ -134,3 +134,37 @@ Minimum value for constraining the value range. The `min` field is only valid fo
 ### `max`
 
 Maximum value for constraining the value range. The `max` field is only valid for `type=integer` and `type=float`. Setting a maximum value is optional and can be omitted.
+
+
+### `optional`
+
+Boolean field which defaults to `false`. If set to `optional=true`, the parameter is not required by the tool. This implies, that the tool implementation is can handle a `parameter.json`in which the `Parameter` is entirely missing.
+
+### `default`
+
+The `default` field is of same data type as the `Parameter` itself. If a default value is set, the tool-framework is required to inject this parameter into the `parameters.json`, as the tool will treat the default like any other non-optional parameter. 
+
+## Example
+
+```yaml
+tools:
+  foobar:
+    title: Dummy Tools
+    parameters:
+      foo_int:
+        type: integer
+        min: 0
+        max: 10
+        description: An integer between 0 and 10
+      foo_data:
+        type: file
+      foo_str:
+        type: string
+        default: My default string
+      foo_option:
+        type: enum
+        values:
+          - option 1
+          - option 2
+          - option 3
+```
