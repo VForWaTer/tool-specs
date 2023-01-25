@@ -1,9 +1,26 @@
 # Tool specification
 
-Overview page. 
+## Overview
 
-How to use the documentation.
+This document describes specifications for generic [`Tool`](./tool.md) entities. A `Tool` is:
+*  any executable software
+*  contained in a docker (compatible) container 
+*  transforms optional [`Parameter`](./parameter.md) and optional data into output
 
-Intro to the definitions.
+```mermaid
+flowchart LR
+    input --> docker --> output
+    data --> docker
 
-How to contribute.
+```
+
+## Contributing
+
+## Implementations
+
+## Frameworks
+
+## Contents
+
+* [`Tool`](./tool.md) specification
+* [`Parameter`](./parameter.md) specification
