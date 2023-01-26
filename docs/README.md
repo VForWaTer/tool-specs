@@ -42,9 +42,18 @@ we are referring to software packages for different programming languages used
 in either of the tools, that help to parse the *parametrization* of a tool into
 a language specific data structure. You can read more about [`Parameter` here](./parameter.md).
 
+The available implementations as of now are:
+  
+|  library          | Language          |  source repository                          | install                       |  template repo                                    |
+|:------------------|:-----------------:|:-------------------------------------------:|:-----------------------------:|:-------------------------------------------------:|
+| `json2args`       | Python 3.X        | https://github.com/hydrocode-de/json2args | `pip install json2args`         | https://github.com/VForWaTer/tool_template_python | 
+| `json2aRgs`       | R > 3.4           | https://github.com/VForWaTer/json2aRgs    | `install.packages("json2aRgs")` | https://github.com/VForWaTer/tool_template_r      | 
+| `js2args`         | NodeJS > 14       | https://github.com/VForWaTer/js2args      | `npm install js2args`           | https://github.com/vforwater/tool_template_node   | 
+| `getParameters.m` | Octave / MATLAB   | https://github.com/VForWaTer/tool_template_octave | :x:                     | https://github.com/VForWaTer/tool_template_octave | 
+
+
 The table below lists which implemetation exist and what parts of the
 tool specification are already covered:
-
 
 
 |  specification     |  json2args (Python 3.X)  | json2aRgs (R)      |  getParameters.m (Octave / MATLAB)  |  js2args (Node.js). |
@@ -73,7 +82,14 @@ tool specification are already covered:
 ## Frameworks
 
 Frameworks refer to software implementations, that run tools for you. Running tool containers
-directly by operating the docker/podman CLI is the most low-level option and always
+directly by operating the docker/podman CLI is the most low-level option and always possible.
+The listed solutions will take some of the management boilerplate from you and
+might turn out useful.
+
+### Python
+
+* [`toolbox-runner`](https://github.com/hydrocode-de/tool-runner)
+
 
 ## Contents
 
