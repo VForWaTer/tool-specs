@@ -68,13 +68,13 @@ tool specification are already covered:
 | datetime           | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :heavy_check_mark:  |
 | file - `.dat`      | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
 | file - `.csv`      | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| file - `.nc`       | x:                       | x:                 | x:                                  | x:                  |
-| file - `.sqlite`   | x:                       | x:                 | x:                                  | x:                  |
-| file - `.nc`       | x:                       | x:                 | x:                                  | x:                  |
+| file - `.nc`       | :x:                      | :x:                | :x:                                 | :x:                 |
+| file - `.sqlite`   | :x:                      | :x:                | :x:                                 | :x:                 |
+| file - `.nc`       | :x:                      | :x:                | :x:                                 | :x:                 |
 |    **Parameter fields**                                                                                                       ||
 | array              | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
-| default            | x:                       | x:                 | x:                                  | x:                  |
-| empty parameters*  | x:                       | x:                 | x:                                  | x:                  |
+| default            | :x:                      | :x:                | :x:                                 | :x:                 |
+| empty parameters*  | :x:                      | :x:                | :x:                                 | :x:                 |
 
 
 * `empty parameters` refers to the parameter specification requiring implementations to be able to handle empty or missing `/in/parameter.json` by returing an appropriate empty data structure
