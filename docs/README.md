@@ -5,7 +5,7 @@
 This document describes specifications for generic [`Tool`](./tool.md) entities. A `Tool` is:
 *  any executable software
 *  contained in a docker (compatible) container 
-*  transforms optional [`Parameter`](./parameter.md) and optional data into output
+*  transforms optional [`Parameters`](./parameter.md) and optional data into output
 
 A very simplified workflow of a tool execution looks like the flowchart below:
 
@@ -40,7 +40,7 @@ of this specification.
 This section lists the implementations, which we are aware of. By *implementation*, 
 we are referring to software packages for different programming languages used
 in either of the tools, that help to parse the *parametrization* of a tool into
-a language specific data structure. You can read more about [`Parameter` here](./parameter.md).
+a language specific data structure. You can read more about [`Parameters` here](./parameter.md).
 
 The available implementations as of now are:
   
@@ -52,7 +52,7 @@ The available implementations as of now are:
 | `getParameters.m` | Octave / MATLAB   | https://github.com/VForWaTer/tool_template_octave | :x:                     | https://github.com/VForWaTer/tool_template_octave | 
 
 
-The table below lists which implemetation exist and what parts of the
+The table below lists which implementation exists and what parts of the
 tool specification are already covered:
 
 
@@ -70,14 +70,13 @@ tool specification are already covered:
 | file - `.csv`      | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
 | file - `.nc`       | :x:                      | :x:                | :x:                                 | :x:                 |
 | file - `.sqlite`   | :x:                      | :x:                | :x:                                 | :x:                 |
-| file - `.nc`       | :x:                      | :x:                | :x:                                 | :x:                 |
 |    **Parameter fields**                                                                                                       ||
 | array              | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
 | default            | :x:                      | :x:                | :x:                                 | :x:                 |
 | empty parameters*  | :x:                      | :x:                | :x:                                 | :x:                 |
 
 
-* `empty parameters` refers to the parameter specification requiring implementations to be able to handle empty or missing `/in/parameter.json` by returing an appropriate empty data structure
+\* `empty parameters` refers to the parameter specification requiring implementations to be able to handle empty or missing `/in/parameter.json` by returing an appropriate empty data structure
 
 ## Frameworks
 
