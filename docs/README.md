@@ -7,16 +7,49 @@ This document describes specifications for generic [`Tool`](./tool.md) entities.
 *  contained in a docker (compatible) container 
 *  transforms optional [`Parameter`](./parameter.md) and optional data into output
 
+A very simplified workflow of a tool execution looks like the flowchart below:
+
 ```mermaid
 flowchart LR
-    input --> docker --> output
-    data --> docker
+    input --> container --> output
+    data --> container
 
 ```
 
+The main objective is to create a communitiy-driven tool interface specification, 
+that is language-agnostic and can be implemented a layer *below* more tool-specific 
+frameworks, like modeling interfaces.
+This helps to increase interoperability and reproducibility, especially in a 
+scientific context.
+
+At the same time, the tool specification does not rely upon a metadata-schema, 
+which is either tool-specific or very generic. But the tool specification can be
+extended by any metadata schema.
+
 ## Contributing
 
+To contribute to this specification, you can create a [Fork](https://github.com/VForWaTer/tool-specs/fork) 
+of the repository and adapt as you suggest. Then open a [Pull Request](https://github.com/VForWaTer/tool-specs/comparehttps://github.com/VForWaTer/tool-specs/compare) and your changes will be reviewed.
+
+If you like to review upcoming changes, you can mail [@mmaelicke](https://github.com/mmaelicke)
+or [@AlexDo1](https://github.com/AlexDo1) to make you an outside collaborator 
+of this specification.
+
 ## Implementations
+
+This section lists the implementations, which we are aware of. By *implementation*, 
+we are referring to software packages for different programming languages used
+in either of the tools, that help to parse the *parametrization* of a tool into
+a language specific data structure. You can read more about [`Parameter` here](./parameter.md).
+
+The table below lists which implemetation exist and what parts of the
+tool specification are already covered:
+
+
+
+|  specification  |  json2args (Python 3.X)  | json2aRgs (R)      |  get_parameter.m (Octave / MATLAB)  |  js2args (Node.js). |
+|:----------------|:------------------------:|:------------------:|:-----------------------------------:|:-------------------:|
+| integer         | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
 
 ## Frameworks
 
