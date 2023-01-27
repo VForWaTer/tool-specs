@@ -8,6 +8,7 @@ theme:
   features:
     - content.action.edit
     - content.action.view
+    #- navigation.tabs
   icon:
     edit: material/pencil
     view: material/eye
