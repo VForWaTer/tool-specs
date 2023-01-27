@@ -1,7 +1,31 @@
 site_name: Container-Tool specification
 site_url: https://vofrwater.github.io/tool-specs
-theme: readthedocs
+repo_url: https://github.com/VForWaTer/tool-specs
+repo_name: VForWTer/tool-specs
+
+theme:
+  name: material
+  features:
+    - content.action.edit
+    - content.action.view
+    #- navigation.tabs
+  icon:
+    edit: material/pencil
+    view: material/eye
+
 nav:
   - Home: README.md
   - Tool: tool.md
   - Parameter: parameter.md
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg

@@ -19,7 +19,7 @@ jobs:
           python-version: 3.9
           
       - name: Install dependencies
-        run: pip install mkdocs
+        run: pip install mkdocs mkdocs-material
         
       - name: Build the documentation
         run: | 
