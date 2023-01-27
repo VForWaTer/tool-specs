@@ -167,4 +167,9 @@ tools:
           - option 1
           - option 2
           - option 3
+      foo_array:
+        type: float
+        array: true
+        optional: true
+        description: An optional array of floats
 ```
