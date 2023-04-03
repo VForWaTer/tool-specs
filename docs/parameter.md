@@ -74,6 +74,7 @@ Allowed data-types include:
 * boolean
 * enum
 * file
+* asset
 
 #### enum
 
@@ -107,7 +108,12 @@ There are a number of file types, which are loaded by default:
 | file extension | Python |  R  |  Matlab |  NodeJS  |
 | ---------------|--------|-----|---------|----------| 
 | .dat  |  `numpy.array` | `vector` | `matrix`  | `number[][]` | 
-|  .csv |  `pandas.DataFrame` | `data.frame` |  `matrix` |  `number[][]` |
+| .csv  |  `pandas.DataFrame` | `data.frame` |  `matrix` |  `number[][]` |
+
+#### asset
+
+The `type=asset` can be used to specify paths to files or entire folders that are copied unchanged to the `/in/` path of the tool container and thus made available to the tool for further processing. The parsing library never attempts to load and process these files, therefore the files are available in the tool exactly as they are.  
+Assets can be tool configurations, folders containing data, geometry files or all kinds of other files.
 
 ### `description`
 
