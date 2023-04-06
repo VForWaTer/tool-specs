@@ -70,6 +70,7 @@ tool specification are already covered:
 | file - `.csv`      | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
 | file - `.nc`       | :x:                      | :x:                | :x:                                 | :x:                 |
 | file - `.sqlite`   | :x:                      | :x:                | :x:                                 | :x:                 |
+| asset              | :x:                      | :x:                | :x:                                 | :x:                 |
 |    **Parameter fields**                                                                                                       ||
 | array              | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
 | default            | :x:                      | :x:                | :x:                                 | :x:                 |
