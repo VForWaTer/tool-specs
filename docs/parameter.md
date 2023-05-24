@@ -135,12 +135,13 @@ The `array` field takes a single boolean value and defaults to `array=false`. If
 
 ### `min`
 
-Minimum value for constraining the value range. The `min` field is only valid for `type=integer` and `type=float`. Setting a minimum value is optional and can be omitted.
+Minimum value for constraining the value range. The `min` field is only valid for `type=integer` and `type=float`. Setting a minimum value is optional and can be omitted.  
+Note that if a `max` value is additionally specified for the parameter, `min` must be lower than `max`.
 
 ### `max`
 
-Maximum value for constraining the value range. The `max` field is only valid for `type=integer` and `type=float`. Setting a maximum value is optional and can be omitted.
-
+Maximum value for constraining the value range. The `max` field is only valid for `type=integer` and `type=float`. Setting a maximum value is optional and can be omitted.  
+Note that if a `min` value is additionally specified for the parameter, `max` must be higher than `min`.
 
 ### `optional`
 
