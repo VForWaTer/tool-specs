@@ -74,6 +74,7 @@ tool specification are already covered:
 |    **Parameter fields**                                                                                                       ||
 | array              | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
 | default            | :x:                      | :x:                | :x:                                 | :x:                 |
+| min & max          | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
 | empty parameters*  | :x:                      | :x:                | :x:                                 | :x:                 |
 
 
