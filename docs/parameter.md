@@ -145,11 +145,12 @@ Note that if a `min` value is additionally specified for the parameter, `max` mu
 
 ### `optional`
 
-Boolean field which defaults to `false`. If set to `optional=true`, the parameter is not required by the tool. This implies, that the tool implementation can handle a `parameter.json` in which the `Parameter` is entirely missing.
+Boolean field which defaults to `false`. If set to `optional=true`, the parameter is not required by the tool. This implies, that the tool implementation can handle a `parameters.json` in which the `Parameter` is entirely missing.
 
 ### `default`
 
-The `default` field is of same data type as the `Parameter` itself. If a default value is set, the tool-framework is required to inject this parameter into the `parameters.json`, as the tool will treat the default like any other non-optional parameter. 
+The `default` field is of same data type as the `Parameter` itself. If a default value is set, the tool-framework is required to inject this parameter into the `parameters.json`, as the tool will treat the default like any other non-optional parameter.  
+Note, that default parameters are only parsed if they are not set as `optional=true`.
 
 ## Example
 
