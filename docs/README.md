@@ -5,7 +5,7 @@
 This document describes specifications for generic [`Tool`](./tool.md) entities. A `Tool` is:
 *  any executable software
 *  contained in a docker (compatible) container 
-*  transforms optional [`Parameters`](./parameter.md) and optional data into output
+*  transforms optional [`Parameters`](./parameter.md) and optional [`Data`](./parameter.md[`Parameters`](./parameter.md)) into output
 
 A very simplified workflow of a tool execution looks like the flowchart below:
 
@@ -68,13 +68,18 @@ tool specification are already covered:
 | datetime           | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :heavy_check_mark:  |
 | file - `.dat`      | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
 | file - `.csv`      | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| file - `.nc`       | :x:                      | :x:                | :x:                                 | :x:                 |
-| file - `.sqlite`   | :x:                      | :x:                | :x:                                 | :x:                 |
 | asset              | :x:                      | :x:                | :x:                                 | :x:                 |
 |    **Parameter fields**                                                                                                       ||
 | array              | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
 | default            | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
 | min & max          | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
+|    **Data fields**                                                                                                            ||
+| format - `.dat`    | :x:                      | :x:                | :x:                                 | :x:                 |
+| format - `.csv   ` | :x:                      | :x:                | :x:                                 | :x:                 |
+| format - `.nc`     | :x:                      | :x:                | :x:                                 | :x:                 |
+| format - `.sqlite` | :x:                      | :x:                | :x:                                 | :x:                 |
+| parse              | :x:                      | :x:                | :x:                                 | :x:                 |
+| include            | :x:                      | :x:                | :x:                                 | :x:                 |
 =======
 | empty parameters*  | :x:                      | :x:                | :x:                                 | :x:                 |
 
@@ -91,9 +96,10 @@ might turn out useful.
 ### Python
 
 * [`toolbox-runner`](https://github.com/hydrocode-de/tool-runner)
+* [`tool-runner-js`](https://github.com/hydrocode-de/tool-runner-js)
 
 
 ## Contents
 
 * [`Tool`](./tool.md) specification
-* [`Parameter`](./parameter.md) specification
+* [`Parameters and Data`](./parameter.md) specification
