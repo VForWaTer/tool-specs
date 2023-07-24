@@ -2,9 +2,9 @@
 
 ## Description
 
-We define a `Tool` to be a executable script/program inside a docker container. In order to be recognized as a `Tool`, the container has to meet a set of requirements:
+We define a `Tool` to be an executable script/program inside a docker container. In order to be recognized as a `Tool`, the container has to meet a set of requirements:
 
-1. A description of the tool, its arguments and parameters has to be present in YAML format at the container location `/src/tool.yml`
+1. A description of the tool, its arguments, parameters and input data has to be present in YAML format at the container location `/src/tool.yml`
 2. The executable script/program has to either store results at the location `/out/` of the container, or print them to the containers StdOut.
 3. A tool execution may be parameterized. The parameterization is stored at `/in/parameters.json` of the container. Additional input data may be added.
 
@@ -18,7 +18,7 @@ Essentially, the following folder and file structure must exist within the conta
 |  |- ...
 |- src/
 |  |- tool.yml
-|  |- run.py/.R/.m
+|  |- run.py/.R/.m/.js
 ```
 
 ## File specification
@@ -27,7 +27,7 @@ The *specification* is defined in a single YAML file, located at `/src/tool.yml`
 At the current state, only one field is defined and supported: `tools`.
 The `tools` field contains a named struct with `Tool` specifications indexed by the `Tool` name.
 
-The file content of the` tool.yml` has to at least include:
+The file content of the `tool.yml` has to at least include:
 
 ```yaml
 tools:
@@ -74,8 +74,13 @@ Examples are: `1.0`, `v1.3.2`
 
 Parameters for tools are also an Entity [defined in the specification](parameter.md). 
 The parameters field hold a struct of `Parameter` instances indexed by the parameter name.
-An example can be found in the next section or on the [Parameter page](parameter.md).
+An example can be found in the Example section below or on the [Parameters page](parameter.md).
 
+### `data`
+
+Input data for a tool is defined separately from the parameters.
+Just like for the parameters, the input data of a tool is indexed by their names.
+Following this specification, data is always given to a tool on a file basis.
 
 ## Example
 
@@ -103,8 +108,9 @@ tools:
       foo_array:
         type: integer
         array: true
+    data:
       foo_matrix:
-        type: file
+        path: /path/to/foo.dat
       foo_csv:
-        type: file
+        path: /path/to/foo.csv
 ```
