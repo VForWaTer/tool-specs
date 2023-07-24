@@ -78,9 +78,10 @@ An example can be found in the Example section below or on the [Parameters page]
 
 ### `data`
 
-Input data for a tool is defined separately from the parameters.
+[Input data](parameter.md#Data: File specification) for a tool is defined separately from the 
+parameters in an additional section of `tool.yml`.
 Just like for the parameters, the input data of a tool is indexed by their names.
-Following this specification, data is always given to a tool on a file basis.
+Data is always given to a tool as files or folders.
 
 ## Example
 
