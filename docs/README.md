@@ -5,15 +5,14 @@
 This document describes specifications for generic [`Tool`](./tool.md) entities. A `Tool` is:
 *  any executable software
 *  contained in a docker (compatible) container 
-*  transforms optional [`Parameters`](./parameter.md) and optional [`Data`](./parameter.md[`Parameters`](./parameter.md)) into output
+*  transforms [`input`](./input.md) consisting of optional [`Parameters`](./parameter.md#Parameters) and optional [`Data`](./input.md#Data) into output
 
 A very simplified workflow of a tool execution looks like the flowchart below:
 
 ```mermaid
 flowchart LR
-    input --> container --> output
-    data --> container
-
+    input -- parameters --> container --> output
+    input -- data --> container
 ```
 
 The main objective is to create a communitiy-driven tool interface specification, 
@@ -66,8 +65,6 @@ tool specification are already covered:
 | enum -check values | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
 | boolean            | :grey_question:          | :grey_question:    | :grey_question:                     | :grey_question:     |
 | datetime           | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :heavy_check_mark:  |
-| file - `.dat`      | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| file - `.csv`      | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
 | asset              | :x:                      | :x:                | :x:                                 | :x:                 |
 |    **Parameter fields**                                                                                                       ||
 | array              | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
@@ -78,13 +75,12 @@ tool specification are already covered:
 | format - `.csv   ` | :x:                      | :x:                | :x:                                 | :x:                 |
 | format - `.nc`     | :x:                      | :x:                | :x:                                 | :x:                 |
 | format - `.sqlite` | :x:                      | :x:                | :x:                                 | :x:                 |
-| parse              | :x:                      | :x:                | :x:                                 | :x:                 |
-| include            | :x:                      | :x:                | :x:                                 | :x:                 |
+| load               | :x:                      | :x:                | :x:                                 | :x:                 |
 =======
-| empty parameters*  | :x:                      | :x:                | :x:                                 | :x:                 |
+| empty input     *  | :x:                      | :x:                | :x:                                 | :x:                 |
 
 
-\* `empty parameters` refers to the parameter specification requiring implementations to be able to handle empty or missing `/in/parameter.json` by returing an appropriate empty data structure
+\* `empty input` refers to the input specification requiring implementations to be able to handle empty or missing `/in/input.json` by returing an appropriate empty data structure
 
 ## Frameworks
 
@@ -102,4 +98,4 @@ might turn out useful.
 ## Contents
 
 * [`Tool`](./tool.md) specification
-* [`Parameters and Data`](./parameter.md) specification
+* [`Input (Parameters and Data)`](./parameter.md) specification
