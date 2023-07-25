@@ -49,7 +49,7 @@ the tool name and content of the sections `parameters` and `data` of the
 reproducible workflows.
 
 
-## Parameters: File specification
+## Parameters: File specification {#Parameters}
 
 Each `Parameter` is described in a parameter block in the `/src/tool.yml` file.
 All parameters are collected as the mandatory `tools.<tool_name>.parameters` block:
@@ -159,7 +159,7 @@ The `default` field is of the same data type as the `Parameter` itself. If a def
 Note, that default parameters are only parsed if they are not set as `optional=true`.
 
 
-## Data: File specification
+## Data: File specification {#Data}
 
 All input `Data` is described in a data block in the `/src/tool.yml` file.
 All sets of input data are collected as the mandatory `tools.<tool_name>.data` block:
