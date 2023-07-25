@@ -5,7 +5,7 @@
 This document describes specifications for generic [`Tool`](./tool.md) entities. A `Tool` is:
 *  any executable software
 *  contained in a docker (compatible) container 
-*  transforms [`input`](./input.md) consisting of optional [`Parameters`](./parameter.md#Parameters) and optional [`Data`](./input.md#Data) into output
+*  transforms [`Input`](./input.md) consisting of optional [`Parameters`](./input.md#parameters-file-specification) and optional [`Data`](./input.md#data-file-specification) into output
 
 A very simplified workflow of a tool execution looks like the flowchart below:
 
@@ -38,8 +38,8 @@ of this specification.
 
 This section lists the implementations, which we are aware of. By *implementation*, 
 we are referring to software packages for different programming languages used
-in either of the tools, that help to parse the *parametrization* of a tool into
-a language specific data structure. You can read more about [`Parameters` here](./parameter.md).
+in either of the tools, that help to parse the *parametrization* and the *input data* of a tool into
+a language specific data structure. Here, you can read more about [parameter and data Input](./input.md).
 
 The available implementations as of now are:
   
@@ -89,13 +89,11 @@ directly by operating the docker/podman CLI is the most low-level option and alw
 The listed solutions will take some of the management boilerplate from you and
 might turn out useful.
 
-### Python
-
-* [`toolbox-runner`](https://github.com/hydrocode-de/tool-runner)
-* [`tool-runner-js`](https://github.com/hydrocode-de/tool-runner-js)
+* [`toolbox-runner`](https://github.com/hydrocode-de/tool-runner) (Python)
+* [`tool-runner-js`](https://github.com/hydrocode-de/tool-runner-js) (NodeJS)
 
 
 ## Contents
 
 * [`Tool`](./tool.md) specification
-* [`Input (Parameters and Data)`](./parameter.md) specification
+* [`Input (Parameters and Data)`](./input.md) specification
