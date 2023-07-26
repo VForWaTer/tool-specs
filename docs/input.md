@@ -173,8 +173,7 @@ Boolean field which defaults to `true`. If set to `load=false`, the file is not 
 library used for parsing input. In this case, file paths are passed as ordinary strings and 
 the parsing library will not attempt to load the file.
 
-There are a number of file formats, which are loaded by default (and can be set via the `format`
-field):
+There are a number of file formats, which are loaded by default:
 
 
 | file extension | Python |  R  |  Matlab |  NodeJS  |
@@ -186,10 +185,10 @@ field):
 Note that setting `load=false` can be helpful when developing tools that require to load the
 data in a different way than it is provided by the parsing libraries.
 
-#### `format`
+#### `extension`
 
 By default, the file format is derived from the file extension given in the path to the data
-in `input.json`. Via the `format` field, it is possible to override the file format of input 
+in `input.json`. Via the `extension` field, it is possible to override the file format of input 
 data. This way, it can be ensured that the library used for parsing the input always loads the
 file in the respective datastructure to the tool.  If the file format / extension is not 
 supported by the parsing library, file paths are passed just as strings, the parsing library 
@@ -203,7 +202,7 @@ tools:
     data:
       foo_data:
         load: true
-        format: .csv
+        extension: .csv
 ```
 
 #### `description`
@@ -250,7 +249,7 @@ tools:
     data:
       foo_csv_data:
         load: true
-        format: .csv
+        extension: .csv
         description: |
           The parsing library will try to load the data like .csv files,
           regardless of the file extension.
