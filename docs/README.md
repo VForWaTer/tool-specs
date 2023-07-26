@@ -55,28 +55,28 @@ The table below lists which implementation exists and what parts of the
 tool specification are already covered:
 
 
-|  specification     |  json2args (Python 3.X)  | json2aRgs (R)      |  getParameters.m (Octave / MATLAB)  |  js2args (Node.js). |
-|:-------------------|:------------------------:|:------------------:|:-----------------------------------:|:-------------------:|
+|  specification        |  json2args (Python 3.X)  | json2aRgs (R)      |  getParameters.m (Octave / MATLAB)  |  js2args (Node.js). |
+|:----------------------|:------------------------:|:------------------:|:-----------------------------------:|:-------------------:|
 |    **Parameter Types**                                                                                                        ||
-| string             | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| integer            | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| float              | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| enum               | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| enum -check values | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
-| boolean            | :grey_question:          | :grey_question:    | :grey_question:                     | :grey_question:     |
-| datetime           | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :heavy_check_mark:  |
-| asset              | :x:                      | :x:                | :x:                                 | :x:                 |
+| string                | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
+| integer               | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
+| float                 | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
+| enum                  | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
+| enum -check values    | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
+| boolean               | :grey_question:          | :grey_question:    | :grey_question:                     | :grey_question:     |
+| datetime              | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :heavy_check_mark:  |
+| asset                 | :x:                      | :x:                | :x:                                 | :x:                 |
 |    **Parameter fields**                                                                                                       ||
-| array              | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
-| default            | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
-| min & max          | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
+| array                 | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
+| default               | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
+| min & max             | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
 |    **Data fields**                                                                                                            ||
-| format - `.dat`    | :x:                      | :x:                | :x:                                 | :x:                 |
-| format - `.csv   ` | :x:                      | :x:                | :x:                                 | :x:                 |
-| format - `.nc`     | :x:                      | :x:                | :x:                                 | :x:                 |
-| format - `.sqlite` | :x:                      | :x:                | :x:                                 | :x:                 |
-| load               | :x:                      | :x:                | :x:                                 | :x:                 |
-| wildcard search    | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.dat`    | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.csv`    | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.nc`     | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.sqlite` | :x:                      | :x:                | :x:                                 | :x:                 |
+| load                  | :x:                      | :x:                | :x:                                 | :x:                 |
+| wildcard search       | :x:                      | :x:                | :x:                                 | :x:                 |
 =======
 | empty input     *  | :x:                      | :x:                | :x:                                 | :x:                 |
 
