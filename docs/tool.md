@@ -114,5 +114,5 @@ tools:
         load: true
       foo_nc:
         load: false
-        format: .nc
+        extension: .nc
 ```
