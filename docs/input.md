@@ -104,9 +104,7 @@ tool:
 
 #### `asset`
 
-The `type=asset` can be used to specify paths to files or entire folders that are copied unchanged to the `/in/` path of the tool container and thus made available to the tool for further processing. The parsing library never attempts to load and process these files, therefore the files are available in the tool exactly as they are.  
-Assets can be tool configurations, geometry files or all kinds of other files.  
-Note that input data should not passed to the tool as `assets`, input data is described in the `data` section of `tool.yml` (see below).
+The `type=asset` can be used to specify paths to files or entire folders that are copied unchanged to the `/in/` path of the tool container and thus made available to the tool for further processing. The parsing library never attempts to load and process these files, therefore assets are available as-is in the container. Assets are neither Data nor parameters, but their dynamic nature might influence the tool execution. Hence, they are added as input to the tool.
 
 #### `description`
 
