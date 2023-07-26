@@ -76,6 +76,7 @@ tool specification are already covered:
 | format - `.nc`     | :x:                      | :x:                | :x:                                 | :x:                 |
 | format - `.sqlite` | :x:                      | :x:                | :x:                                 | :x:                 |
 | load               | :x:                      | :x:                | :x:                                 | :x:                 |
+| wildcard search    | :x:                      | :x:                | :x:                                 | :x:                 |
 =======
 | empty input     *  | :x:                      | :x:                | :x:                                 | :x:                 |
 
