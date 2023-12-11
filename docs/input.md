@@ -46,7 +46,7 @@ if the parameterization of a tool can be applied to other data. That means, the
 
 From a practical perspective, if you build a tool around these tool specifications,
 the tool name and content of the sections `parameters` and `data` of `/in/input.json` 
-can be used to create checksums and therefor help to establish reproducible workflows.
+can be used to create checksums and therefore help to establish reproducible workflows.
 
 
 ## Parameters: File specification
@@ -147,7 +147,22 @@ Note, that default parameters are only parsed if they are not set as `optional=t
 ## Data: File specification
 
 All input `Data` is described in a data block in the `/src/tool.yml` file.
-All sets of input data are collected as the **optional** `tools.<tool_name>.data` block:
+All sets of input data are collected as the **optional** `tools.<tool_name>.data` block.
+The simples declaration of input data is to list all available data files in a
+single, top-level list:
+
+```yaml
+tools:
+  foobar:
+    parameters:
+      [...]
+    data:
+      - foo_data
+      - foo_data2
+```
+
+If any of the dataset sources requires a more detailed configuration, objects 
+can be specifies as well:
 
 ```yaml
 tools:
@@ -156,58 +171,22 @@ tools:
       [...]
     data:
       foo_data:
-        [...]
+        description: Our first dataset with foo properties
+      foo_data2:
+        description: Our second dataset with foo2 properties
 ```
 
-Refer to the section below to learn about mandatory and optional fields for `Data`.
+Refer to the section below to learn about the fields for `Data`.
 
 
 ### Fields
 
-The following section defines all mandatory and optional fields of a `Data` entity.
+The following section defines all fields of a `Data` entity.
 
-#### `load`
-
-This is the only **mandatory** field for an entity of `Data`.  
-Boolean field which defaults to `true`. If set to `load=false`, the file is not parsed by the 
-library used for parsing input. In this case, file paths are passed as ordinary strings and 
-the parsing library will not attempt to load the file.
-
-There are a number of file formats, which are loaded by default:
-
-
-| file extension | Python |  R  |  Matlab |  NodeJS  |
-| ---------------|--------|-----|---------|----------| 
-| .dat  |  `numpy.array` | `vector` | `matrix`  | `number[][]` | 
-| .csv  |  `pandas.DataFrame` | `data.frame` |  `matrix` |  `number[][]` |
-
-
-Note that setting `load=false` can be helpful when developing tools that require to load the
-data in a different way than it is provided by the parsing libraries.
-
-#### `extension`
-
-By default, the file format is derived from the file extension given in the path to the data
-in `input.json`. Via the `extension` field, it is possible to override the file format of input 
-data. This way, it can be ensured that the library used for parsing the input always loads the
-file in the respective datastructure to the tool.  If the file format / extension is not 
-supported by the parsing library, file paths are passed just as strings, the parsing library 
-will not attempt to load the file (see above for supported formats).
-
-```yaml
-tools:
-  foobar:
-    parameters:
-      ...
-    data:
-      foo_data:
-        load: true
-        extension: .csv
-```
 
 #### `description`
 
-The `description` is a multiline comment to describe the input data.
+The `description` is a single- or multiline comment to describe the input data.
 For the `description` Markdown is allowed, although tool-frameworks are not required to parse it.
 Descriptions are optional and can be omitted.
 
@@ -248,12 +227,9 @@ tools:
         description: An optional array of floats
     data:
       foo_csv_data:
-        load: true
-        extension: .csv
         description: |
-          The parsing library will try to load the data like .csv files,
-          regardless of the file extension.
+          This is a CSV file that should contain valid input. We do currently
+          not specify, what that exactly means.
       foo_nc_data:
-        load: false
-        description: netCDF data that is not loaded by the parsing library.    
+        description: CF-netCDF 1.8 conform climate model output.    
 ```
