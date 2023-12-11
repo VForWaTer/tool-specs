@@ -72,7 +72,9 @@ An example can be found in the Example section below or on the [Parameters page]
 [Input data](./input.md#data-file-specification) for a tool is defined separately from the 
 parameters in an additional section of `tool.yml`.
 Just like for the parameters, the input data of a tool is indexed by their names.
-Data is always given to a tool as files or folders.
+In case no further configuration is needed, data may be supplied in a single list
+of dataset names.
+Data has to be provided as files, which may be nested in sub-folders of `/in/`.
 
 ## Example
 
@@ -101,9 +103,6 @@ tools:
         type: integer
         array: true
     data:
-      foo_csv:
-        load: true
-      foo_nc:
-        load: false
-        extension: .nc
+      - foo_csv:
+      - foo_nc:
 ```
