@@ -2,23 +2,23 @@
 
 ## Description
 
-We define a `Tool` to be a executable script/program inside a docker container. In order to be recognized as a `Tool`, the container has to meet a set of requirements:
+We define a `Tool` to be an executable script/program inside a docker container. In order to be recognized as a `Tool`, the container has to meet a set of requirements:
 
-1. A description of the tool, its arguments and parameters has to be present in YAML format at the container location `/src/tool.yml`
+1. A description of the tool, its arguments, parameters and input data has to be present in YAML format at the container location `/src/tool.yml`
 2. The executable script/program has to either store results at the location `/out/` of the container, or print them to the containers StdOut.
-3. A tool execution may be parameterized. The parameterization is stored at `/in/parameters.json` of the container. Additional input data may be added.
+3. A tool execution may be parameterized. The parameterization is stored at `/in/input.json` of the container. Additional input data may be added to `/in/input.json`.
 
 Essentially, the following folder and file structure must exist within the container:
 
 ```
 /
 |- in/
-|  |- parameters.json
+|  |- input.json
 |- out/
 |  |- ...
 |- src/
 |  |- tool.yml
-|  |- run.py/.R/.m
+|  |- run.py/.R/.m/.js
 ```
 
 ## File specification
@@ -27,7 +27,7 @@ The *specification* is defined in a single YAML file, located at `/src/tool.yml`
 At the current state, only one field is defined and supported: `tools`.
 The `tools` field contains a named struct with `Tool` specifications indexed by the `Tool` name.
 
-The file content of the` tool.yml` has to at least include:
+The file content of the `tool.yml` has to at least include:
 
 ```yaml
 tools:
@@ -74,8 +74,14 @@ Examples are: `1.0`, `v1.3.2`
 
 Parameters for tools are also an Entity [defined in the specification](parameter.md). 
 The parameters field hold a struct of `Parameter` instances indexed by the parameter name.
-An example can be found in the next section or on the [Parameter page](parameter.md).
+An example can be found in the Example section below or on the [Parameters page](./input.md#parameters-file-specification).
 
+### `data`
+
+[Input data](./input.md#data-file-specification) for a tool is defined separately from the 
+parameters in an additional section of `tool.yml`.
+Just like for the parameters, the input data of a tool is indexed by their names.
+Data is always given to a tool as files or folders.
 
 ## Example
 
@@ -103,8 +109,10 @@ tools:
       foo_array:
         type: integer
         array: true
-      foo_matrix:
-        type: file
+    data:
       foo_csv:
-        type: file
+        load: true
+      foo_nc:
+        load: false
+        extension: .nc
 ```

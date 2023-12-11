@@ -5,15 +5,14 @@
 This document describes specifications for generic [`Tool`](./tool.md) entities. A `Tool` is:
 *  any executable software
 *  contained in a docker (compatible) container 
-*  transforms optional [`Parameters`](./parameter.md) and optional data into output
+*  transforms [`Input`](./input.md) consisting of optional [`Parameters`](./input.md#parameters-file-specification) and optional [`Data`](./input.md#data-file-specification) into output
 
 A very simplified workflow of a tool execution looks like the flowchart below:
 
 ```mermaid
 flowchart LR
-    input --> container --> output
-    data --> container
-
+    input -- parameters --> container --> output
+    input -- data --> container
 ```
 
 The main objective is to create a communitiy-driven tool interface specification, 
@@ -39,8 +38,8 @@ of this specification.
 
 This section lists the implementations, which we are aware of. By *implementation*, 
 we are referring to software packages for different programming languages used
-in either of the tools, that help to parse the *parametrization* of a tool into
-a language specific data structure. You can read more about [`Parameters` here](./parameter.md).
+in either of the tools, that help to parse the *parametrization* and the *input data* of a tool into
+a language specific data structure. Here, you can read more about [parameter and data Input](./input.md).
 
 The available implementations as of now are:
   
@@ -56,30 +55,33 @@ The table below lists which implementation exists and what parts of the
 tool specification are already covered:
 
 
-|  specification     |  json2args (Python 3.X)  | json2aRgs (R)      |  getParameters.m (Octave / MATLAB)  |  js2args (Node.js). |
-|:-------------------|:------------------------:|:------------------:|:-----------------------------------:|:-------------------:|
+|  specification        |  json2args (Python 3.X)  | json2aRgs (R)      |  getParameters.m (Octave / MATLAB)  |  js2args (Node.js). |
+|:----------------------|:------------------------:|:------------------:|:-----------------------------------:|:-------------------:|
 |    **Parameter Types**                                                                                                        ||
-| string             | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| integer            | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| float              | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| enum               | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| enum -check values | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
-| boolean            | :grey_question:          | :grey_question:    | :grey_question:                     | :grey_question:     |
-| datetime           | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :heavy_check_mark:  |
-| file - `.dat`      | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| file - `.csv`      | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
-| file - `.nc`       | :x:                      | :x:                | :x:                                 | :x:                 |
-| file - `.sqlite`   | :x:                      | :x:                | :x:                                 | :x:                 |
-| asset              | :x:                      | :x:                | :x:                                 | :x:                 |
+| string                | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
+| integer               | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
+| float                 | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
+| enum                  | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
+| enum -check values    | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
+| boolean               | :grey_question:          | :grey_question:    | :grey_question:                     | :grey_question:     |
+| datetime              | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :heavy_check_mark:  |
+| asset                 | :x:                      | :x:                | :x:                                 | :x:                 |
 |    **Parameter fields**                                                                                                       ||
-| array              | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
-| default            | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
-| min & max          | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
+| array                 | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
+| default               | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
+| min & max             | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
+|    **Data fields**                                                                                                            ||
+| extension - `.dat`    | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.csv`    | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.nc`     | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.sqlite` | :x:                      | :x:                | :x:                                 | :x:                 |
+| load                  | :x:                      | :x:                | :x:                                 | :x:                 |
+| wildcard search       | :x:                      | :x:                | :x:                                 | :x:                 |
 =======
-| empty parameters*  | :x:                      | :x:                | :x:                                 | :x:                 |
+| empty input     *  | :x:                      | :x:                | :x:                                 | :x:                 |
 
 
-\* `empty parameters` refers to the parameter specification requiring implementations to be able to handle empty or missing `/in/parameter.json` by returing an appropriate empty data structure
+\* `empty input` refers to the input specification requiring implementations to be able to handle empty or missing `/in/input.json` by returing an appropriate empty data structure
 
 ## Frameworks
 
@@ -88,12 +90,11 @@ directly by operating the docker/podman CLI is the most low-level option and alw
 The listed solutions will take some of the management boilerplate from you and
 might turn out useful.
 
-### Python
-
-* [`toolbox-runner`](https://github.com/hydrocode-de/tool-runner)
+* [`toolbox-runner`](https://github.com/hydrocode-de/tool-runner) (Python)
+* [`tool-runner-js`](https://github.com/hydrocode-de/tool-runner-js) (NodeJS)
 
 
 ## Contents
 
 * [`Tool`](./tool.md) specification
-* [`Parameter`](./parameter.md) specification
+* [`Input (Parameters and Data)`](./input.md) specification

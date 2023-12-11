@@ -16,7 +16,7 @@ theme:
 nav:
   - Home: README.md
   - Tool: tool.md
-  - Parameter: parameter.md
+  - Input (Parameters and Data): input.md
 
 markdown_extensions:
   - pymdownx.superfences:
