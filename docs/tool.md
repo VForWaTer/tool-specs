@@ -61,15 +61,6 @@ description: |
   This is the second line.
 ```
 
-### `version`
-
-The version is optional, but highly recommended.
-The version number has to follow a semantic verisoning pattern with either major, minor and patch version,
-or be limited to only major and minor version.
-Semantic version numbers can be prefixed by a small` v`.
-
-Examples are: `1.0`, `v1.3.2`
-
 ### `parameters`
 
 Parameters for tools are also an Entity [defined in the specification](parameter.md). 
