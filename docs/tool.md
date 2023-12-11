@@ -61,15 +61,6 @@ description: |
   This is the second line.
 ```
 
-### `version`
-
-The version is optional, but highly recommended.
-The version number has to follow a semantic verisoning pattern with either major, minor and patch version,
-or be limited to only major and minor version.
-Semantic version numbers can be prefixed by a small` v`.
-
-Examples are: `1.0`, `v1.3.2`
-
 ### `parameters`
 
 Parameters for tools are also an Entity [defined in the specification](parameter.md). 
@@ -81,7 +72,9 @@ An example can be found in the Example section below or on the [Parameters page]
 [Input data](./input.md#data-file-specification) for a tool is defined separately from the 
 parameters in an additional section of `tool.yml`.
 Just like for the parameters, the input data of a tool is indexed by their names.
-Data is always given to a tool as files or folders.
+In case no further configuration is needed, data may be supplied in a single list
+of dataset names.
+Data has to be provided as files, which may be nested in sub-folders of `/in/`.
 
 ## Example
 
@@ -110,9 +103,6 @@ tools:
         type: integer
         array: true
     data:
-      foo_csv:
-        load: true
-      foo_nc:
-        load: false
-        extension: .nc
+      - foo_csv:
+      - foo_nc:
 ```
