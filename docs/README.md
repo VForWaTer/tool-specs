@@ -39,7 +39,7 @@ of this specification.
 This section lists the implementations, which we are aware of. By *implementation*, 
 we are referring to software packages for different programming languages used
 in either of the tools, that help to parse the *parametrization* and the *input data* of a tool into
-a language specific data structure. Here, you can read more about [parameter and data Input](./input.md).
+a language specific data structure. Here, you can read more about [parameter and data input](./input.md).
 
 The available implementations as of now are:
   
