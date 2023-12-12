@@ -209,7 +209,7 @@ for your users to understand how inputs should look like and be formatted.
 example: /in/input_name.csv
 ```
 
-It is considered good practice to add example data and example parameterizaitons
+It is considered good practice to add example data and example parameterizations
 to the `/in/` folder. At inspection time, when a client application reads the 
 `tool.yml`, this client can also access the examples in the `/in/` folder.
 At runtime, as the client application mounts data and parameterizations into the
