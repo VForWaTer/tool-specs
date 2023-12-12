@@ -188,7 +188,8 @@ The following section defines all fields of a `Data` entity.
 
 The `description` is a single- or multiline comment to describe the input data.
 For the `description` Markdown is allowed, although tool-frameworks are not required to parse it.
-Descriptions are optional and can be omitted.
+Descriptions are optional and can be omitted, but it is highly recommended to 
+add descriptions to all required data inputs.
 
 A multiline comment in YAML can be specified like:
 
@@ -197,6 +198,37 @@ description: |
     This is the first line
     This is the second line
 ```
+
+#### `example`
+
+The `example` field is optional and can be used to reference a sample dataset
+for the given input, **within** the container. Data examples are a prime source 
+for your users to understand how inputs should look like and be formatted.
+
+```yaml
+example: /samples/input_name.csv
+```
+
+#### `quality`
+
+The `quality` field is an optional field, that contains various sub-fields.
+These text-based fields can be used to specify data quality requirements for the
+input data.
+The quality field can contain one or more of the child fields, but cannot be empty.
+
+```yaml
+quality:
+  completeness: Describes the expectations of present variables and measurements.
+  accuracy: | 
+    Describes if the tool has expectations of minimum required accurary.
+    This can involve measurement accuracy, but also expected scaling.
+  validity: | 
+    Describes which format requirements the tool has, to recognize the passed in
+    files as valid data inputs. 
+```
+
+There are additional dimensions to data quality, consistency, timeliness and 
+uniqueness. These dimensions do not apply here as general catgories.
 
 
 ## Example
