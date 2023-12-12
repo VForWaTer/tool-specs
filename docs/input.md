@@ -216,6 +216,26 @@ At runtime, as the client application mounts data and parameterizations into the
 container at `/in/`, the examples are non-existent in the container and cannot 
 accidentally pollute the runtime container.
 
+
+#### `extension`
+
+The `extension` field is optional and can be used to limit the permitted file 
+extensions for a data input. Allowed is a single string input or a list of strings.
+By convention, the point `.` should be included into the `extension` as well.
+
+```yaml
+extension: .csv
+```
+
+```yaml
+extension:
+  - .dat
+  - .txt
+  - .DAT
+  - .TXT
+```
+
+
 ## Example
 
 ```yaml
