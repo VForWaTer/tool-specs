@@ -148,7 +148,7 @@ Note, that default parameters are only parsed if they are not set as `optional=t
 
 All input `Data` is described in a data block in the `/src/tool.yml` file.
 All sets of input data are collected as the **optional** `tools.<tool_name>.data` block.
-The simples declaration of input data is to list all available data files in a
+The simplest declaration of input data is to list all available data files in a
 single, top-level list:
 
 ```yaml
@@ -206,30 +206,15 @@ for the given input, **within** the container. Data examples are a prime source
 for your users to understand how inputs should look like and be formatted.
 
 ```yaml
-example: /samples/input_name.csv
+example: /in/input_name.csv
 ```
 
-#### `quality`
-
-The `quality` field is an optional field, that contains various sub-fields.
-These text-based fields can be used to specify data quality requirements for the
-input data.
-The quality field can contain one or more of the child fields, but cannot be empty.
-
-```yaml
-quality:
-  completeness: Describes the expectations of present variables and measurements.
-  accuracy: | 
-    Describes if the tool has expectations of minimum required accurary.
-    This can involve measurement accuracy, but also expected scaling.
-  validity: | 
-    Describes which format requirements the tool has, to recognize the passed in
-    files as valid data inputs. 
-```
-
-There are additional dimensions to data quality, consistency, timeliness and 
-uniqueness. These dimensions do not apply here as general catgories.
-
+It is considered good practice to add example data and example parameterizaitons
+to the `/in/` folder. At inspection time, when a client application reads the 
+`tool.yml`, this client can also access the examples in the `/in/` folder.
+At runtime, as the client application mounts data and parameterizations into the
+container at `/in/`, the examples are non-existent in the container and cannot 
+accidentally pollute the runtime container.
 
 ## Example
 
