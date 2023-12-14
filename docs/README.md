@@ -63,7 +63,7 @@ tool specification are already covered:
 | float                 | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
 | enum                  | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
 | enum -check values    | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
-| boolean               | :grey_question:          | :grey_question:    | :grey_question:                     | :grey_question:     |
+| boolean               | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
 | datetime              | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :heavy_check_mark:  |
 | asset                 | :x:                      | :x:                | :x:                                 | :x:                 |
 |    **Parameter fields**                                                                                                       ||
@@ -72,14 +72,12 @@ tool specification are already covered:
 | min & max             | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
 |    **Data fields**                                                                                                            ||
 | extension - `.dat`    | :x:                      | :x:                | :x:                                 | :x:                 |
-| extension - `.csv`    | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.csv`    | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
 | extension - `.nc`     | :x:                      | :x:                | :x:                                 | :x:                 |
 | extension - `.sqlite` | :x:                      | :x:                | :x:                                 | :x:                 |
-| load                  | :x:                      | :x:                | :x:                                 | :x:                 |
-| wildcard search       | :x:                      | :x:                | :x:                                 | :x:                 |
 =======
-| empty input     *  | :x:                      | :x:                | :x:                                 | :x:                 |
-
+| empty input     *     | :x:                      | :x:                | :x:                                 | :x:                 |
+| wildcards             | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
 
 \* `empty input` refers to the input specification requiring implementations to be able to handle empty or missing `/in/input.json` by returing an appropriate empty data structure
 
