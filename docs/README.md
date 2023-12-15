@@ -73,7 +73,7 @@ tool specification are already covered:
 |    **Data fields**                                                                                                            ||
 | extension - `.dat`    | :x:                      | :x:                | :x:                                 | :x:                 |
 | extension - `.csv`    | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
-| extension - `.nc`     | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.nc`     | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
 | extension - `.sqlite` | :x:                      | :x:                | :x:                                 | :x:                 |
 =======
 | empty input     *     | :x:                      | :x:                | :x:                                 | :x:                 |
