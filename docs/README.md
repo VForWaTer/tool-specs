@@ -74,7 +74,7 @@ tool specification are already covered:
 | extension - `.dat`    | :heavy_check_mark:                      | :x:                | :x:                                 | :x:                 |
 | extension - `.csv`    | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
 | extension - `.nc`     | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
-| extension - `.json` | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.json` | :heavy_check_mark:         | :x:                | :x:                                 | :x:                 |
 =======
 | empty input     *     | :x:                      | :x:                | :x:                                 | :x:                 |
 | wildcards             | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
