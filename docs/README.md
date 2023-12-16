@@ -71,10 +71,10 @@ tool specification are already covered:
 | default               | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
 | min & max             | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
 |    **Data fields**                                                                                                            ||
-| extension - `.dat`    | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.dat`    | :heavy_check_mark:                      | :x:                | :x:                                 | :x:                 |
 | extension - `.csv`    | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
 | extension - `.nc`     | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
-| extension - `.sqlite` | :x:                      | :x:                | :x:                                 | :x:                 |
+| extension - `.json` | :x:                      | :x:                | :x:                                 | :x:                 |
 =======
 | empty input     *     | :x:                      | :x:                | :x:                                 | :x:                 |
 | wildcards             | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
