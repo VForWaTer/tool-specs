@@ -230,10 +230,10 @@ extension: .csv
 ```yaml
 extension:
   - .dat
-  - .txt
-  - .DAT
   - .TXT
 ```
+
+Note that the `extension` field is case **insensitive**. 
 
 
 ## Example
