@@ -63,18 +63,18 @@ tool specification are already covered:
 | float                 | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
 | enum                  | :heavy_check_mark:       | :heavy_check_mark: | :heavy_check_mark:                  | :heavy_check_mark:  |
 | enum -check values    | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
-| boolean               | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
+| boolean               | :heavy_check_mark:       | :heavy_check_mark: | :grey_question:                     | :grey_question:     |
 | datetime              | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :heavy_check_mark:  |
 | asset                 | :x:                      | :x:                | :x:                                 | :x:                 |
 |    **Parameter fields**                                                                                                       ||
-| array                 | :heavy_check_mark:       | :grey_question:    | :grey_question:                     | :grey_question:     |
+| array                 | :heavy_check_mark:       | :heavy_check_mark: | :grey_question:                     | :grey_question:     |
 | default               | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
 | min & max             | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
 |    **Data fields**                                                                                                            ||
-| extension - `.dat`    | :heavy_check_mark:                      | :x:                | :x:                                 | :x:                 |
-| extension - `.csv`    | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
+| extension - `.dat`    | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
+| extension - `.csv`    | :heavy_check_mark:       | :heavy_check_mark: | :x:                                 | :x:                 |
 | extension - `.nc`     | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
-| extension - `.json` | :heavy_check_mark:         | :x:                | :x:                                 | :x:                 |
+| extension - `.json`   | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
 =======
 | empty input     *     | :x:                      | :x:                | :x:                                 | :x:                 |
 | wildcards             | :heavy_check_mark:       | :x:                | :x:                                 | :x:                 |
