@@ -2,24 +2,8 @@
 
 ## Description
 
-We define a `Tool` to be an executable script/program inside a docker container. In order to be recognized as a `Tool`, the container has to meet a set of requirements:
+We define a `Tool` to be an executable script/program inside a docker container. In order to be recognized as a `Tool`, the container has to meet a set of requirements, which are described [here](./container.md)
 
-1. A description of the tool, its arguments, parameters and input data has to be present in YAML format at the container location `/src/tool.yml`
-2. The executable script/program has to either store results at the location `/out/` of the container, or print them to the containers StdOut.
-3. A tool execution may be parameterized. The parameterization is stored at `/in/input.json` of the container. Additional input data may be added to `/in/input.json`.
-
-Essentially, the following folder and file structure must exist within the container:
-
-```
-/
-|- in/
-|  |- input.json
-|- out/
-|  |- ...
-|- src/
-|  |- tool.yml
-|  |- run.py/.R/.m/.js
-```
 
 ## File specification
 

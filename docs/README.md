@@ -94,5 +94,6 @@ might turn out useful.
 
 ## Contents
 
+* [`Container`](container.md) structure
 * [`Tool`](./tool.md) specification
 * [`Input (Parameters and Data)`](./input.md) specification

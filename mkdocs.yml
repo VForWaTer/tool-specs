@@ -15,6 +15,7 @@ theme:
 
 nav:
   - Home: README.md
+  - Container Structure: container.md
   - Tool: tool.md
   - Input (Parameters and Data): input.md
 
