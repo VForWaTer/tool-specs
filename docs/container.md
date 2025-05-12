@@ -75,7 +75,8 @@ the citation information in the template repositories. The templates are license
 as CC zero.
 
 The `CITATION.cff` file format is described [here](https://citation-file-format.github.io/).
-There is also an online tool to build these files: https://citation-file-format.github.io/cff-initializer-javascript/
+There is also an online tool to build these files: 
+[https://citation-file-format.github.io/cff-initializer-javascript/](https://citation-file-format.github.io/cff-initializer-javascript/)
 
 CFF files are well supported by Github, Zenodo or Zotero.
 
