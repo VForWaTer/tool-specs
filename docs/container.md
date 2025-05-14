@@ -11,7 +11,7 @@ image has to meet these requirements:
 ## Description
 
 In order to work properly, there is a minimum required structure, that the 
-conatainer has to follow. In  order to build a container image accordingly,
+container has to follow. In  order to build a container image accordingly,
 there are a number of template repositories on Github:
 
 * [Python template](https://github.com/VForWaTer/tool_template_python)
@@ -42,8 +42,7 @@ parameters in and out of the container.
 
 `/in/input.json` contains the the parameterization for running the tool. 
 There are client libraries for each of the supported languages, which read and 
-validate the parameterization. Runtime CLI parameters are not supported yet, 
-but planned for the future.
+validate the parameterization. Runtime CLI parameters are not yet supported but are planned for future implementation.
 
 ### Metadata
 
@@ -53,8 +52,8 @@ information about the tool.
 ### Entrypoint
 
 `/src/run.[py/R/js/m]` is the single entrypoint into the tool. 
-Any executable file is supported. Please note, that the tool-specs only support 
-transformation-like tools, that *end* (no service tools).
+Any executable file is supported. Please note that the tool-specs support only transformation-like tools that terminate *end* upon completion; 
+service tools are not supported.
 
 Please note: In order to work properly with external tools, you implement the 
 execution of the script, as shown in the sample repositories, as the default
@@ -69,14 +68,12 @@ to build frameworks that can read the metadata of each tool available on the sys
 
 ### Citation information
 
-Each of the template repositories include a `CITATION.cff` to distribute 
-citation information to users of the tool. You, as a developer, should **replace**
-the citation information in the template repositories. The templates are licensed
-as CC zero.
+Each of the template repositories includes a `CITATION.cff` file, which provides standardized citation metadata for your tool. As a developer, you should **replace** the placeholder citation information in the template with details relevant to your own project.
 
-The `CITATION.cff` file format is described [here](https://citation-file-format.github.io/).
-There is also an online tool to build these files: 
+The `CITATION.cff` file helps users properly cite your tool/software, increasing its visibility and ensuring you receive appropriate credit. It also aligns your project with FAIR principles by making citation metadata machine-readable and interoperable.
+
+GitHub automatically detects this file and displays a “Cite this repository” button. When used with services like Zenodo, the metadata from `CITATION.cff` can be used to generate a DOI with embedded citation information. Other tools such as Zotero also support this format.
+
+The `CITATION.cff` file full format specifications and documentation is described [here](https://citation-file-format.github.io/).
+To create or edit your file, you can use the online tool: 
 [https://citation-file-format.github.io/cff-initializer-javascript/](https://citation-file-format.github.io/cff-initializer-javascript/)
-
-CFF files are well supported by Github, Zenodo or Zotero.
-
